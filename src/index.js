@@ -5,6 +5,7 @@ const cors = require('cors');
 const port = process.env.PORT || 4002;
 
 const productRoute = require("./routes/productRoute")
+const employeeRoute = require("./routes/employeeRoute")
 
 const app = express();
 app.use(cors());
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use("/product", productRoute);
+app.use("/employee", employeeRoute);
 
 //Routing
 app.get("/",(req, res)=>{
